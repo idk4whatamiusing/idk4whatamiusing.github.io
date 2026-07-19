@@ -64,7 +64,7 @@ function ProjectCard({
             describeOnly ? "absolute inset-x-0 top-0" : "w-full"
           } transition-opacity duration-200 opacity-0 group-hover:opacity-100`}
         >
-          <p className={`rounded-lg bg-background/30 ${project.description.includes(".") ? "p-0" : "px-2.5 py-1"} text-sm leading-snug text-foreground shadow-sm`}>
+          <p className={`rounded-lg bg-background/70 ${project.description.includes(".") ? "p-0" : "px-2.5 py-1"} text-base leading-snug text-foreground shadow-sm`}>
             {project.description}
           </p>
         </figcaption>
