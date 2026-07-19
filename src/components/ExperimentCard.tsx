@@ -26,7 +26,7 @@ export default function ExperimentCard({
   index: number;
 }) {
   const ratio = ratios[index % ratios.length];
-  const { ref, onEnter, onLeave, describeOnly } =
+  const { ref, onEnter, onLeave, describeOnly, hovered } =
     useCardHover<HTMLDivElement>();
 
   return (
@@ -44,21 +44,15 @@ export default function ExperimentCard({
             className="absolute inset-0 h-full w-full object-cover"
           />
         )}
-        {describeOnly ? (
-          <div className="absolute inset-x-0 top-0 flex items-start p-6">
-            <p className="rounded-lg bg-background/85 px-3 py-2 text-sm leading-relaxed text-foreground shadow-sm">
-              {item.description}
-            </p>
-          </div>
-        ) : (
-          <>
-            <figcaption className="w-full bg-background/85 p-6 backdrop-blur-sm opacity-0 transition-opacity duration-150 group-hover:opacity-100">
-              <p className="rounded-lg bg-background/85 px-3 py-2 text-sm leading-relaxed text-foreground shadow-sm">
-                {item.description}
-              </p>
-            </figcaption>
-          </>
-        )}
+        <figcaption
+          className={`bg-background/85 backdrop-blur-sm ${
+            describeOnly ? "absolute inset-x-0 top-0 m-6 p-0" : "w-full p-6"
+          } transition-opacity duration-200 ${hovered ? "opacity-100" : "opacity-0"}`}
+        >
+          <p className="rounded-lg bg-background/85 px-3 py-2 text-sm leading-relaxed text-foreground shadow-sm">
+            {item.description}
+          </p>
+        </figcaption>
       </div>
     </figure>
   );

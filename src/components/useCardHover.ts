@@ -17,5 +17,5 @@ export function useCardHover<T extends HTMLElement>() {
     setClipped(false);
   };
 
-  return { ref, onEnter, onLeave, describeOnly: hovered && clipped };
+  return { ref, onEnter, onLeave, hovered, describeOnly: hovered && clipped };
 }

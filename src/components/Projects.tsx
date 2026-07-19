@@ -40,7 +40,7 @@ function ProjectCard({
   ratio: string;
 }) {
   const animated = project.interactive;
-  const { ref, onEnter, onLeave, describeOnly } =
+  const { ref, onEnter, onLeave, describeOnly, hovered } =
     useCardHover<HTMLAnchorElement>();
   return (
     <a
@@ -59,25 +59,13 @@ function ProjectCard({
             className="absolute inset-0 h-full w-full object-cover"
           />
         )}
-        {describeOnly ? (
-        <div className="absolute inset-x-0 top-0 flex items-start p-6">
-          <p className="rounded-lg bg-background/85 px-3 py-2 text-sm leading-relaxed text-foreground shadow-sm">
-            {project.description}
-          </p>
-        </div>
-      ) : (
-        <div>
-          <p
-            className={`rounded-lg bg-background/85 px-3 py-2 text-sm leading-relaxed text-foreground shadow-sm transition-opacity ${
-              animated
-                ? "opacity-0 duration-200 delay-0 group-hover:delay-200 group-hover:opacity-100"
-                : "opacity-0 duration-150 group-hover:opacity-100"
-            }`}
-          >
-            {project.description}
-          </p>
-        </div>
-      )}
+        <p
+          className={`rounded-lg bg-background/85 px-3 py-2 text-sm leading-relaxed text-foreground shadow-sm transition-opacity duration-200 ${
+            describeOnly ? "absolute inset-x-0 top-0 m-6" : ""
+          } ${hovered ? "opacity-100" : "opacity-0"}`}
+        >
+          {project.description}
+        </p>
     </a>
   );
 }
