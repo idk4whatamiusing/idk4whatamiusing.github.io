@@ -78,7 +78,7 @@ export const profile = {
       description: "A lightweight journal for tracking coding progress and notes.",
       link: "https://github.com/idk4whatamiusing",
       interactive: true,
-      gif: "/gifs/devlog.gif",
+      gif: "/gifs/tll4k-messi.gif",
     },
     {
       name: "Gridshot",
