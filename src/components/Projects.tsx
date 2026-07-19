@@ -50,7 +50,7 @@ function ProjectCard({
       rel="noopener noreferrer"
       onMouseEnter={onEnter}
       onMouseLeave={onLeave}
-        className={`group relative flex ${ratio} w-full items-end overflow-hidden rounded-2xl border border-border bg-card transition-all duration-500 ease-out hover:border-accent/50 hover:shadow-[0_10px_30px_-15px_var(--color-accent)]${animated ? " hover:scale-[0.97]" : ""}`}
+        className={`group relative flex ${ratio} w-full items-end overflow-hidden rounded-2xl bg-card transition-all duration-500 ease-out hover:border-accent/50 hover:shadow-[0_10px_30px_-15px_var(--color-accent)]${animated ? " hover:scale-[0.97]" : ""}`}
       >
         {project.gif && (
           <img

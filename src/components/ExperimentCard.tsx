@@ -35,7 +35,7 @@ export default function ExperimentCard({
         ref={ref}
         onMouseEnter={onEnter}
         onMouseLeave={onLeave}
-        className={`relative flex ${ratio} w-full items-end overflow-hidden rounded-2xl border border-border bg-card transition-all duration-200 ease-out hover:border-accent/40`}
+        className={`relative flex ${ratio} w-full items-end overflow-hidden rounded-2xl bg-card transition-all duration-200 ease-out hover:border-accent/40`}
       >
         {item.gif && (
           <img
