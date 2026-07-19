@@ -45,11 +45,11 @@ export default function ExperimentCard({
           />
         )}
         <figcaption
-          className={`backdrop-blur ${
-            describeOnly ? "absolute inset-x-0 top-0" : "w-full"
-          } transition-opacity duration-200 opacity-0 group-hover:opacity-100`}
+          className={`${
+            describeOnly ? "absolute inset-x-0 top-0" : "absolute inset-x-0 bottom-0"
+          } transition-opacity duration-200 opacity-0 group-hover:opacity-100 p-3`}
         >
-          <p className={`rounded-lg bg-background/70 ${item.description.includes(".") ? "p-0" : "px-2.5 py-1"} text-base leading-snug text-foreground shadow-sm`}>
+          <p className="rounded-lg bg-background/70 px-2.5 py-1 text-base leading-snug text-foreground shadow-sm">
             {item.description}
           </p>
         </figcaption>
