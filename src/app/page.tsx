@@ -17,7 +17,7 @@ export default function Home() {
         <section className="w-full px-0 pt-0 pb-24">
           <Masonry
             items={profile.experiments}
-            columnWidth={300}
+            columnWidth={420}
             columnGutter={6}
             ssrWidth={1200}
             render={({ index, data: item }) => (
