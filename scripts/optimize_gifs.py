@@ -7,7 +7,10 @@ Reduces file size and playback cost by:
   - reducing colors via adaptive palette
   - keeping the original per-frame duration and looping
 
-Requires Pillow:  python3 -m pip install Pillow
+Requires Pillow (install in the project venv):
+    python3 -m venv .venv
+    .venv/bin/pip install Pillow
+    .venv/bin/python scripts/optimize_gifs.py
 """
 
 import glob
