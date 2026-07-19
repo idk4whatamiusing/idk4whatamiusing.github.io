@@ -50,9 +50,19 @@ function ProjectCard({
       rel="noopener noreferrer"
       onMouseEnter={onEnter}
       onMouseLeave={onLeave}
-      className={`group relative flex ${ratio} w-full items-end overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-500 ease-out hover:border-accent/50 hover:shadow-[0_10px_30px_-15px_var(--color-accent)]${animated ? " hover:scale-[0.97]" : ""}`}
-    >
-      {describeOnly ? (
+        className={`group relative flex ${ratio} w-full items-end overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-500 ease-out hover:border-accent/50 hover:shadow-[0_10px_30px_-15px_var(--color-accent)]${animated ? " hover:scale-[0.97]" : ""}`}
+      >
+        {project.gif && (
+          <>
+            <img
+              src={project.gif}
+              alt=""
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-background/40" />
+          </>
+        )}
+        {describeOnly ? (
         <div className="absolute inset-x-0 top-0 flex items-start p-6">
           <p className="text-sm leading-relaxed text-muted">
             {project.description}
