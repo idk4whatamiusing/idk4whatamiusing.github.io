@@ -45,7 +45,7 @@ export default function ExperimentCard({
           />
         )}
         <figcaption
-          className={`backdrop-blur-md ${
+          className={`backdrop-blur ${
             describeOnly ? "absolute inset-x-0 top-0 m-6 p-0" : "w-full p-6"
           } transition-opacity duration-200 opacity-0 group-hover:opacity-100`}
         >
