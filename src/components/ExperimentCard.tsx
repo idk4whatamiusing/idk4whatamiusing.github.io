@@ -49,7 +49,7 @@ export default function ExperimentCard({
             describeOnly ? "absolute inset-x-0 top-0 m-6 p-0" : "w-full p-6"
           } transition-opacity duration-200 opacity-0 group-hover:opacity-100`}
         >
-          <p className="rounded-lg bg-background/85 px-3 py-2 text-sm leading-relaxed text-foreground shadow-sm">
+          <p className="rounded-lg bg-background/85 px-2.5 py-1 text-sm leading-snug text-foreground shadow-sm">
             {item.description}
           </p>
         </figcaption>
