@@ -67,8 +67,13 @@ All content is centralized in `src/data/profile.ts`. Edit this file to update:
 ### To update the site:
 ```bash
 npm run export   # Build static site → /out
-npm run deploy   # Push /out to gh-pages branch
+npm run deploy   # Push /out to gh-pages branch (--dotfiles --nojekyll)
 ```
+
+### ⚠️ Important deploy notes:
+- `gh-pages` ignores dotfiles by default — the deploy script uses `--dotfiles --nojekyll` to ensure `.nojekyll` and other hidden files are included
+- `.nojekyll` at root is **required** for GitHub Pages to serve files from `_next/` directory
+- If you ever delete the `gh-pages` branch, you must re-enable Pages in repo Settings → Pages → set source to `gh-pages` branch
 
 ### First-time setup:
 1. Push code to `main` branch of `idk4whatamiusing/idk4whatamiusing.github.io`
