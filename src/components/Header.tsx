@@ -1,57 +1,57 @@
 "use client";
 
+import { useState } from "react";
 import { profile } from "@/data/profile";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import InfoPanel from "@/components/InfoPanel";
+import { useTab } from "@/components/TabContext";
 
 export default function Header() {
-  const pathname = usePathname();
-  const isHome = pathname === "/";
+  const [infoOpen, setInfoOpen] = useState(false);
+  const { setTab } = useTab();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-sm">
-      <nav className="mx-auto flex max-w-2xl items-center justify-between px-6 py-4">
-        <Link href="/" className="text-sm font-medium tracking-tight">
+    <header className="sticky top-0 z-50 border-b border-border bg-background/70 backdrop-blur-md">
+      <nav className="flex items-center justify-between px-6 py-4">
+        <Link
+          href="/"
+          className="text-sm text-muted transition-colors hover:text-accent"
+        >
           {profile.name}
         </Link>
-        <div className="flex items-center gap-6 text-sm text-muted">
-          {isHome ? (
-            <>
-              <a href="#experience" className="transition-colors hover:text-foreground">
-                Experience
-              </a>
-              <a href="#projects" className="transition-colors hover:text-foreground">
-                Projects
-              </a>
-              <a href="#contact" className="transition-colors hover:text-foreground">
-                Contact
-              </a>
-            </>
-          ) : (
-            <Link href="/" className="transition-colors hover:text-foreground">
-              Home
-            </Link>
-          )}
-          <Link
-            href="/play"
-            className="transition-colors hover:text-foreground"
+        <div className="flex items-center gap-6">
+          <button
+            type="button"
+            onClick={() => setTab("work")}
+            className="text-sm text-muted transition-colors hover:text-accent"
           >
-            Play
-          </Link>
-          <Link
-            href="/info"
-            className="transition-colors hover:text-foreground"
+            Work
+          </button>
+          <button
+            type="button"
+            onClick={() => setTab("exp")}
+            className="text-sm text-muted transition-colors hover:text-accent"
+          >
+            Exp
+          </button>
+        </div>
+        <div className="relative flex items-center gap-6">
+          <button
+            type="button"
+            onClick={() => setInfoOpen((o) => !o)}
+            className="text-sm text-muted transition-colors hover:text-accent"
           >
             Info
-          </Link>
+          </button>
           <a
             href={profile.resumeUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-colors hover:text-foreground"
+            className="text-sm text-muted transition-colors hover:text-accent"
           >
             Résumé
           </a>
+          <InfoPanel open={infoOpen} onClose={() => setInfoOpen(false)} />
         </div>
       </nav>
     </header>

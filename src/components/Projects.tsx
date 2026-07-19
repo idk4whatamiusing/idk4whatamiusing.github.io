@@ -1,23 +1,28 @@
 import { profile } from "@/data/profile";
+import Reveal from "@/components/Reveal";
 
 export default function Projects() {
   return (
-    <section id="projects" className="mx-auto max-w-2xl px-6 py-16">
-      <h2 className="text-sm font-medium uppercase tracking-widest text-muted">
-        Projects
-      </h2>
-      <div className="mt-8 space-y-6">
+    <section id="projects" className="mx-auto max-w-5xl px-6 py-20">
+      <div className="grid gap-4 sm:grid-cols-2">
         {profile.projects.map((project, i) => (
-          <a
-            key={i}
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block rounded-lg border border-border p-4 transition-colors hover:bg-card"
-          >
-            <h3 className="font-medium">{project.name}</h3>
-            <p className="mt-1 text-sm text-muted">{project.description}</p>
-          </a>
+          <Reveal key={i} delay={i * 80}>
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative block h-full overflow-hidden rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-[0_0_30px_-10px_var(--color-accent)]"
+            >
+              <div className="flex items-start justify-between gap-4">
+                <h3 className="text-base font-medium transition-colors group-hover:text-accent">
+                  {project.name}
+                </h3>
+              </div>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
+                {project.description}
+              </p>
+            </a>
+          </Reveal>
         ))}
       </div>
     </section>
