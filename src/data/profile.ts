@@ -4,6 +4,7 @@ export type Experiment = {
   description: string;
   interactive: boolean;
   gif?: string;
+  poster?: string;
 };
 
 export type Project = {
@@ -12,6 +13,7 @@ export type Project = {
   link: string;
   interactive: boolean;
   gif?: string;
+  poster?: string;
 };
 
 export const profile = {
