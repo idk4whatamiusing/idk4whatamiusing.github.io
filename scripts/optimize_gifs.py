@@ -13,9 +13,9 @@ Requires Pillow:  python3 -m pip install Pillow
 import glob
 import os
 
-MAX_FRAMES = 30
-MAX_W = 360
-COLORS = 64
+MAX_FRAMES = 20
+MAX_W = 320
+COLORS = 48
 GIF_DIR = os.path.join(os.path.dirname(__file__), "..", "public", "gifs")
 
 
