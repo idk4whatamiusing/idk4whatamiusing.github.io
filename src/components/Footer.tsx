@@ -2,7 +2,7 @@ import { profile } from "@/data/profile";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border py-10">
+    <footer className="py-10">
       <div className="flex items-center justify-between px-6">
         <a
           href={`mailto:${profile.socials.email}`}

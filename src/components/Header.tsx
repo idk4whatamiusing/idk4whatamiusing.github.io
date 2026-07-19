@@ -11,7 +11,7 @@ export default function Header() {
   const { setTab } = useTab();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/70 backdrop-blur-md">
+    <header className="sticky top-0 z-50 bg-background/60 backdrop-blur-xl">
       <nav className="flex items-center justify-between px-6 py-4">
         <Link
           href="/"
