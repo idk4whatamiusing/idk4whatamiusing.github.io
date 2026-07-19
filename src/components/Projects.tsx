@@ -1,5 +1,6 @@
 "use client";
 
+import { useSyncExternalStore } from "react";
 import { profile } from "@/data/profile";
 import { Masonry } from "masonic";
 
@@ -10,6 +11,10 @@ if (typeof ResizeObserver === "undefined") {
     disconnect() {}
   };
 }
+
+const subscribe = () => () => {};
+const getSnapshot = () => true;
+const getServerSnapshot = () => false;
 
 const ratios = [
   "aspect-[4/5]",
@@ -27,6 +32,8 @@ const ratios = [
 ];
 
 export default function Projects() {
+  const mounted = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+  if (!mounted) return null;
   return (
     <section id="projects" className="w-full px-0 pt-0 pb-24">
       <Masonry
