@@ -89,7 +89,7 @@ export const profile = {
       interactive: false,
       gif: "/gifs/08-mbappe-mbappe-dictator-gif.gif",
     },
-  ],
+  ] as Project[],
   experiments: [
     { title: "Coming Soon", number: "01", description: "Something interesting is brewing.", interactive: false, gif: "/gifs/09-messi-crying-gif.gif" },
     { title: "Coming Soon", number: "02", description: "Stay tuned for updates.", interactive: false, gif: "/gifs/10-messi-girlcelona-gif.gif" },
@@ -103,5 +103,5 @@ export const profile = {
     { title: "Coming Soon", number: "10", description: "Learning Rust, one project at a time.", interactive: false, gif: "/gifs/18-sad-messi-messi-gif.gif" },
     { title: "Coming Soon", number: "11", description: "Audio-reactive visuals.", interactive: false, gif: "/gifs/19-tll4k-messi-gif.gif" },
     { title: "Coming Soon", number: "12", description: "A minimal note-taking toy.", interactive: false, gif: "/gifs/20-trollszn123-ronaldo-gif.gif" },
-  ],
+  ] as Experiment[],
 };
