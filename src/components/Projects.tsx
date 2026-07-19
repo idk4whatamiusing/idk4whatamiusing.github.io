@@ -64,7 +64,7 @@ function ProjectCard({
             describeOnly ? "absolute inset-x-0 top-0" : "absolute inset-x-0 bottom-0"
           } transition-opacity duration-200 opacity-0 group-hover:opacity-100 p-3`}
         >
-          <p className="max-w-full w-fit rounded-lg bg-background/70 px-2.5 py-1 text-base leading-snug text-foreground shadow-sm">
+          <p className="max-w-full w-fit rounded-lg bg-background/70 px-2.5 py-1 text-base leading-snug text-foreground shadow-sm transition-[text-shadow] duration-200 group-hover:[text-shadow:0_0_8px_var(--color-accent)]">
             {project.description}
           </p>
         </figcaption>
