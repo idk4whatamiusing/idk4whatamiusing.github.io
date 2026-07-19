@@ -50,7 +50,7 @@ export default function Projects() {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className={`group relative flex ${ratio} w-full items-end overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-500 ease-out hover:border-accent/50 hover:shadow-[0_24px_50px_-20px_var(--color-accent)]${animated ? " hover:-translate-y-3 hover:scale-[1.02]" : ""}`}
+              className={`group relative flex ${ratio} w-full items-end overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-500 ease-out hover:border-accent/50 hover:shadow-[0_10px_30px_-15px_var(--color-accent)]${animated ? " hover:scale-[0.97]" : ""}`}
             >
               <div>
                 <h3 className="text-lg font-medium tracking-tight transition-colors group-hover:text-accent">
