@@ -50,7 +50,7 @@ function ProjectCard({
       rel="noopener noreferrer"
       onMouseEnter={onEnter}
       onMouseLeave={onLeave}
-        className={`group relative flex ${ratio} w-full items-end overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-500 ease-out hover:border-accent/50 hover:shadow-[0_10px_30px_-15px_var(--color-accent)]${animated ? " hover:scale-[0.97]" : ""}`}
+        className={`group relative flex ${ratio} w-full items-end overflow-hidden rounded-2xl border border-border bg-card transition-all duration-500 ease-out hover:border-accent/50 hover:shadow-[0_10px_30px_-15px_var(--color-accent)]${animated ? " hover:scale-[0.97]" : ""}`}
       >
         {project.gif && (
           <img
@@ -59,13 +59,15 @@ function ProjectCard({
             className="absolute inset-0 h-full w-full object-cover"
           />
         )}
-        <p
-          className={`rounded-lg bg-background/85 px-3 py-2 text-sm leading-relaxed text-foreground shadow-sm transition-opacity duration-200 ${
-            describeOnly ? "absolute inset-x-0 top-0 m-6" : ""
-          } opacity-0 group-hover:opacity-100`}
+        <figcaption
+          className={`bg-background/85 backdrop-blur-sm ${
+            describeOnly ? "absolute inset-x-0 top-0 m-6 p-0" : "w-full p-6"
+          } transition-opacity duration-200 opacity-0 group-hover:opacity-100`}
         >
-          {project.description}
-        </p>
+          <p className="rounded-lg bg-background/85 px-3 py-2 text-sm leading-relaxed text-foreground shadow-sm">
+            {project.description}
+          </p>
+        </figcaption>
     </a>
   );
 }
