@@ -61,14 +61,14 @@ function ProjectCard({
         )}
         {describeOnly ? (
         <div className="absolute inset-x-0 top-0 flex items-start p-6">
-          <p className="text-sm leading-relaxed text-muted">
+          <p className="rounded-lg bg-background/85 px-3 py-2 text-sm leading-relaxed text-foreground shadow-sm">
             {project.description}
           </p>
         </div>
       ) : (
         <div>
           <p
-            className={`text-sm leading-relaxed text-muted transition-opacity ${
+            className={`rounded-lg bg-background/85 px-3 py-2 text-sm leading-relaxed text-foreground shadow-sm transition-opacity ${
               animated
                 ? "opacity-0 duration-200 delay-0 group-hover:delay-200 group-hover:opacity-100"
                 : "opacity-0 duration-150 group-hover:opacity-100"
