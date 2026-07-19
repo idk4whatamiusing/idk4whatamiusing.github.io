@@ -55,9 +55,6 @@ export default function ExperimentCard({
           </div>
         ) : (
           <>
-            <span className="absolute left-6 top-6 font-mono text-4xl font-semibold text-muted/60 transition-colors duration-200 group-hover:text-accent">
-              {item.number}
-            </span>
             <figcaption className="w-full bg-background/80 p-6 backdrop-blur-sm opacity-0 transition-opacity duration-150 group-hover:opacity-100">
               <p className="text-sm leading-relaxed text-muted">
                 {item.description}
