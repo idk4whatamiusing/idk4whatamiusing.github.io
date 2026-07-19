@@ -16,9 +16,9 @@ Requires Pillow (install in the project venv):
 import glob
 import os
 
-MAX_FRAMES = 30
-MAX_W = 360
-COLORS = 64
+MAX_FRAMES = 40
+MAX_W = 400
+COLORS = 96
 GIF_DIR = os.path.join(os.path.dirname(__file__), "..", "public", "gifs")
 
 
