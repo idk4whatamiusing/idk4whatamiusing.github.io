@@ -70,11 +70,8 @@ function ProjectCard({
         </div>
       ) : (
         <div>
-          <h3 className="text-lg font-medium tracking-tight transition-colors group-hover:text-accent">
-            {project.name}
-          </h3>
           <p
-            className={`mt-2 text-sm leading-relaxed text-muted transition-opacity ${
+            className={`text-sm leading-relaxed text-muted transition-opacity ${
               animated
                 ? "opacity-0 duration-200 delay-0 group-hover:delay-200 group-hover:opacity-100"
                 : "opacity-0 duration-150 group-hover:opacity-100"

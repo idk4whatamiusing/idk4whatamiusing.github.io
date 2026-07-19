@@ -59,10 +59,7 @@ export default function ExperimentCard({
               {item.number}
             </span>
             <figcaption className="w-full bg-background/80 p-6 backdrop-blur-sm opacity-0 transition-opacity duration-150 group-hover:opacity-100">
-              <h3 className="text-base font-medium tracking-tight transition-colors group-hover:text-accent">
-                {item.title}
-              </h3>
-              <p className="mt-1.5 text-sm leading-relaxed text-muted">
+              <p className="text-sm leading-relaxed text-muted">
                 {item.description}
               </p>
             </figcaption>
