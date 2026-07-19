@@ -27,7 +27,7 @@ export default function ExperimentCard({
   return (
     <figure className="group">
       <div
-        className={`relative flex ${ratio} w-full items-end overflow-hidden rounded-2xl border border-border bg-card transition-all duration-200 ease-out hover:border-accent/40 hover:shadow-[0_20px_50px_-20px_var(--color-accent)]`}
+        className={`relative flex ${ratio} w-full items-end overflow-hidden rounded-2xl border border-border bg-card transition-all duration-200 ease-out hover:border-accent/40`}
       >
         <span className="absolute left-6 top-6 font-mono text-4xl font-semibold text-muted/60 transition-colors duration-200 group-hover:text-accent">
           {item.number}
