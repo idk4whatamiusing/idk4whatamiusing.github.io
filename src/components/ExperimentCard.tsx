@@ -26,7 +26,7 @@ export default function ExperimentCard({
   index: number;
 }) {
   const ratio = ratios[index % ratios.length];
-  const { ref, onEnter, onLeave, describeOnly, hovered } =
+  const { ref, onEnter, onLeave, describeOnly } =
     useCardHover<HTMLDivElement>();
 
   return (
@@ -47,7 +47,7 @@ export default function ExperimentCard({
         <figcaption
           className={`bg-background/85 backdrop-blur-sm ${
             describeOnly ? "absolute inset-x-0 top-0 m-6 p-0" : "w-full p-6"
-          } transition-opacity duration-200 ${hovered ? "opacity-100" : "opacity-0"}`}
+          } transition-opacity duration-200 opacity-0 group-hover:opacity-100`}
         >
           <p className="rounded-lg bg-background/85 px-3 py-2 text-sm leading-relaxed text-foreground shadow-sm">
             {item.description}

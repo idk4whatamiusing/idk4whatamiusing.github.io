@@ -40,7 +40,7 @@ function ProjectCard({
   ratio: string;
 }) {
   const animated = project.interactive;
-  const { ref, onEnter, onLeave, describeOnly, hovered } =
+  const { ref, onEnter, onLeave, describeOnly } =
     useCardHover<HTMLAnchorElement>();
   return (
     <a
@@ -62,7 +62,7 @@ function ProjectCard({
         <p
           className={`rounded-lg bg-background/85 px-3 py-2 text-sm leading-relaxed text-foreground shadow-sm transition-opacity duration-200 ${
             describeOnly ? "absolute inset-x-0 top-0 m-6" : ""
-          } ${hovered ? "opacity-100" : "opacity-0"}`}
+          } opacity-0 group-hover:opacity-100`}
         >
           {project.description}
         </p>
