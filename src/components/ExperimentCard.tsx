@@ -1,7 +1,3 @@
-"use client";
-
-import { useState } from "react";
-import { motion } from "framer-motion";
 import type { Experiment } from "@/data/profile";
 
 const ratios = [
@@ -28,38 +24,30 @@ export default function ExperimentCard({
 }) {
   const ratio = ratios[index % ratios.length];
   const animated = item.interactive;
-  const [hovered, setHovered] = useState(false);
 
   return (
-    <motion.figure
-      className="group relative"
-      onHoverStart={() => setHovered(true)}
-      onHoverEnd={() => setHovered(false)}
-      whileHover={animated ? { y: -6 } : undefined}
-      transition={{ duration: 0.2, ease: "easeOut" }}
-    >
+    <figure className="group">
       <div
-        className={`relative flex ${ratio} w-full items-end overflow-hidden rounded-2xl border border-border bg-card transition-colors duration-200 group-hover:border-accent/40 group-hover:shadow-[0_20px_50px_-20px_var(--color-accent)]`}
+        className={`relative flex ${ratio} w-full items-end overflow-hidden rounded-2xl border border-border bg-card transition-all duration-200 ease-out hover:border-accent/40 hover:shadow-[0_20px_50px_-20px_var(--color-accent)]${animated ? " hover:-translate-y-1.5" : ""}`}
       >
         <span className="absolute left-6 top-6 font-mono text-4xl font-semibold text-muted/60 transition-colors duration-200 group-hover:text-accent">
           {item.number}
         </span>
-        <motion.figcaption
-          className="w-full bg-background/80 p-6 backdrop-blur-sm"
-          animate={{ opacity: hovered ? 1 : 0 }}
-          transition={{
-            duration: animated ? 0.2 : 0.15,
-            delay: hovered && animated ? 0.2 : 0,
-          }}
+        <figcaption
+          className={`w-full bg-background/80 p-6 backdrop-blur-sm transition-opacity ${
+            animated
+              ? "opacity-0 duration-200 delay-0 group-hover:delay-200 group-hover:opacity-100"
+              : "opacity-0 duration-150 group-hover:opacity-100"
+          }`}
         >
-          <h3 className="text-base font-medium tracking-tight text-muted transition-colors duration-200 group-hover:text-accent">
+          <h3 className="text-base font-medium tracking-tight transition-colors group-hover:text-accent">
             {item.title}
           </h3>
           <p className="mt-1.5 text-sm leading-relaxed text-muted">
             {item.description}
           </p>
-        </motion.figcaption>
+        </figcaption>
       </div>
-    </motion.figure>
+    </figure>
   );
 }
