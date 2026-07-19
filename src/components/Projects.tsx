@@ -3,8 +3,8 @@ import Reveal from "@/components/Reveal";
 
 export default function Projects() {
   return (
-    <section id="projects" className="mx-auto max-w-5xl px-6 py-20">
-      <div className="grid gap-4 sm:grid-cols-2">
+    <section id="projects" className="w-full px-0 pt-0 pb-24">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {profile.projects.map((project, i) => (
           <Reveal key={i} delay={i * 80}>
             <a

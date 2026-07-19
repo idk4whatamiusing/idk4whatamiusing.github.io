@@ -14,7 +14,7 @@ export default function Home() {
       {tab === "work" ? (
         <Projects />
       ) : (
-        <section className="w-full px-8 py-24">
+        <section className="w-full px-0 pt-0 pb-24">
           <Masonry
             items={profile.experiments}
             columnWidth={300}
